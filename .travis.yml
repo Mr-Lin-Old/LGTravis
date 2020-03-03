@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: LGTravis/LGTravis.xcodeproj
+workspace: LGTravis/LGTravis.xcodeproj
 xcode_scheme: LGTravis
 osx_image: xcode11.3
 
