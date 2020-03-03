@@ -1,0 +1,12 @@
+Language: objective-c
+xcode_project: LGTravis/LGTravis.xcodeproj
+xcode_scheme: LGTravis
+osx_image: xcode11.3.1
+
+script:
+- set -o pipefail
+-xcodebuild test -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -destination "name=iPhone 7" -enableCodeCoverage YES | xcpretty
+
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
