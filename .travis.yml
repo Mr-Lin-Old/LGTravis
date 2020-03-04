@@ -4,7 +4,7 @@ xcode_scheme: LGTravis
 osx_image: xcode11
 
 script:
-xcodebuild -project "LGTravis/LGTravis.xcodeproj" -scheme "LGTravis" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xcodebuild -project "LGTravis/LGTravis.xcodeproj" -scheme "LGTravis" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
