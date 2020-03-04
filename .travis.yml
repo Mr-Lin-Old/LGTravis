@@ -1,8 +1,11 @@
 language: objective-c
 xcode_project: LGTravis/LGTravis.xcodeproj
 xcode_scheme: LGTravis
-xcode_destination: platform:iOS Simulator,OS:13.3,name:iPhone 11
 osx_image: xcode11
+
+script:
+- set -o pipefail
+- xcodebuild -project LGTravis/LGTravis.xcodeproj -scheme LGTravis -destination platform:iOS Simulator,OS:13.3,name:iPhone 11 build test | xcpretty
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
