@@ -4,8 +4,7 @@ xcode_scheme: LGTravis
 osx_image: xcode11
 
 script:
-- set -o pipefail
--xcodebuild -project "LGTravis/LGTravis.xcodeproj" -scheme "LGTravis" -destination "name=iPhone 11" -enableCodeCoverage YES
+- xcbuild -project "LGTravis/LGTravis.xcodeproj" -scheme "LGTravis" -enableCodeCoverage YES
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
